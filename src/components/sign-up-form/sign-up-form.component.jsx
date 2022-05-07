@@ -23,7 +23,7 @@ const SignUpForm = () => {
 
     const handleSubmit = async (event) =>{
         event.preventDefault();
-        if (password != confrimPasswrod) {
+        if (password !== confrimPasswrod) {
             alert("password do not match!");
             console.log("not match pasword")
             return;
@@ -90,7 +90,7 @@ const SignUpForm = () => {
                      value={confrimPasswrod}
                       />
                 
-                <Button  type="submit">Sign Up</Button>
+                <Button buttonType={'inverted'} type="submit">Sign Up</Button>
             </form>
         </div>
     );
