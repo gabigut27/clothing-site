@@ -34,12 +34,22 @@ const SignInForm = () => {
             console.log(response);
             resetFormFields();
         }catch(error){
-   
+            switch (error.code){
+                case 'auth/user-not-found':
+                    alert('user not exist');
+                    break;
+                case 'auth/wrong-password':
+                    alert('incorrect password');
+                    break;
+                default:
+                    console.log(error.code);
+
+            }
+            
         }
 
-       
 
-    }
+    };
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -71,7 +81,7 @@ const SignInForm = () => {
                 
                 <div className='buttons-container'>
                 <Button buttonType={'inverted'} type="submit">Sign in </Button>  
-                <Button buttonType='google' onClick={signInWithGoogle}> Google sign in </Button>
+                <Button buttonType='google' type="button" onClick={signInWithGoogle}> Google sign in </Button>
                
                 
 
