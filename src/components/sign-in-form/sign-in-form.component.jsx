@@ -5,7 +5,7 @@ import {
       SignInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import '../sign-in-form/sign-in-form.styles.scss';
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPES_CLASSES } from '../button/button.component';
 
 const deafultFormFields={
     email: '',
@@ -80,8 +80,14 @@ const SignInForm = () => {
                 
                 
                 <div className='buttons-container'>
-                <Button buttonType={'inverted'} type="submit">Sign in </Button>  
-                <Button buttonType='google' type="button" onClick={signInWithGoogle}> Google sign in </Button>
+                <Button 
+                 buttonType={BUTTON_TYPES_CLASSES.inverted}
+                 type="submit">Sign in </Button>  
+                <Button 
+                    buttonType={BUTTON_TYPES_CLASSES.google} 
+                    type="button" 
+                    onClick={signInWithGoogle}>
+                         Google sign in </Button>
                
                 
 
